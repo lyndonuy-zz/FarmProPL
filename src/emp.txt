@@ -1,0 +1,14 @@
+SUNRISE
+FARMIN
+
+	PLANTSTRING $farmer;		:: Variable Declaration
+	
+	HARVEST "Enter name: ";		:: Displays string
+	FERTILIZESTRING $farmer;	:: Input a name into $farmer
+
+HARVEST "Welcome to FarmPro! Hello farmer.";
+HARVEST $farmer;			:: Displays name inputted by the user
+
+FARMOUT
+SUNSET
+¥

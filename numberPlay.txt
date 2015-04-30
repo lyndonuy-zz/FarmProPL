@@ -1,0 +1,44 @@
+SUNRISE
+FARMIN numberPlay	##ganda ni peyt
+	PLANTINT $choice IS 0;
+	PLOW{
+		HARVEST "1 - Prints a number until a number @n";
+		HARVEST "2 - Determine odd or even @n";
+		HARVEST "3 - Exit program";
+		FERTILIZEINT $choice;
+		CHANGE($choice){
+			SEASON 1: {		#:Number line:#
+				HARVEST "Number line: @n";
+				PLANTINT $num1 IS -1;				## Testing negative integer declaration
+				PLANTINT $num2 IS 0*-1+1--100+100;	## Testing arithmetic expression evaluation
+				HARVEST "Input smaller integer: ";
+				FERTILIZEINT $num1;
+				HARVEST "Input larger integer: ";
+				FERTILIZEINT $num2;
+				WHILE($num1<=$num2) {
+					HARVEST $num1;
+					HARVEST " ";
+					GROW $num1;
+				}
+				ENDSEASON;
+			}
+			SEASON 2: {		#:Odd/Even:#
+				HARVEST "Odd or Even: @n";
+				PLANTINT $num;
+				PLANTDEC $quotient IS 0.0;
+				HARVEST "Input an integer: ";
+				FERTILIZEINT $num;
+				PLOW{
+					$quotient IS $num / 2;
+				}WHILE($quotient > 1);
+				IF ($quotient ISEQUAL 1) THEN
+					HARVEST " is odd.";
+				ELSE
+					HARVEST " is even.";
+				ENDIF
+				ENDSEASON;
+			}
+		}
+	}WHILE($num ISNOTEQUAL 3);
+FARMOUT
+SUNSET

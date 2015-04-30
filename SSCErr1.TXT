@@ -1,0 +1,19 @@
+## string value for INT data type
+SUNRISE
+FARMIN fctrl
+	PLANTINT $n;
+	PLANTINT $ctr IS "hello world!";
+	PLANTINT $factor IS 1;
+	
+	HARVEST "Enter a value for n: ";
+	FERTILIZEINT $n;
+
+	PLOW{
+		$factor IS $factor * $ctr;
+		GROW $ctr;
+	}WHILE($ctr<=$n);
+
+	HARVEST "n! = ";
+	HARVEST $factor;
+FARMOUT
+SUNSET

@@ -1,0 +1,23 @@
+SUNRISE
+FARMIN multip
+
+	PLANTINT $n;
+	PLANTINT $ctr;
+	PLANTINT $mult;
+
+	HARVEST "Enter a value for n: ";
+	FERTILIZEINT $n;
+	HARVEST "Multiples of n are: ";
+
+	PLOW{
+		$mult IS $n * $ctr;
+		HARVEST $n;
+                HARVEST " * ";
+                HARVEST $ctr;
+                HARVEST "=";
+                HARVEST $mult;
+		GROW $ctr;
+	}WHILE($ctr<=10);
+
+FARMOUT
+SUNSET

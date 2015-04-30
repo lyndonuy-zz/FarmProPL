@@ -1,0 +1,19 @@
+##GROW value of bool
+SUNRISE
+FARMIN fctrl
+
+	PLANTBOOL $n;
+	PLANTINT $ctr IS 1;
+	PLANTINT $factor IS 1;
+	
+	HARVEST "Enter a value for n: ";
+	FERTILIZEINT $n;
+
+	PLOW{
+		$factor IS $factor * $ctr;
+		GROW $ctr;
+	}WHILE($ctr<=$n);
+
+	HARVEST "n! = "$factor;
+FARMOUT
+SUNSET

@@ -1,0 +1,23 @@
+##if not closed with ENDIF
+##start_main before start
+
+FARMIN nstdif
+SUNRISE
+
+	PLANTINT $age IS 31;
+
+	IF ($age<13) THEN
+		HARVEST "You are a baby farmer";
+	ELSEIF ($age<19) THEN
+		HARVEST "You are a teenage farmer!";
+	ELSE
+		IF ($age<65) THEN
+			HARVEST "You are an adult farmer";
+		ELSE
+			HARVEST "You are an old farmer!";
+		ENDIF
+		HARVEST "Farming is love <3.";
+	ENDIF	
+
+SUNSET
+FARMOUT

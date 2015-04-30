@@ -1,0 +1,25 @@
+## string value for fertilize
+SUNRISE
+FARMIN fibonacci
+	##Variable Declarations
+	PLANTINT $x IS 1;
+	PLANTINT $y IS 0;
+	PLANTINT $ctr IS 0;
+	PLANTINT $sum;
+	PLANTINT $max;
+	PLANTSTRING $out IS "Output fibonacci series up to: ";
+	#:abc
+	:#
+	HARVEST $out;
+	FERTILIZEINT $out;
+	PLOW{
+		$sum IS $x + $y;
+		$y IS $x;
+		$x IS $sum;
+		HARVEST $sum;
+		HARVEST " ";
+		GROW $ctr;
+	}WHILE($ctr<$max);
+
+FARMOUT
+SUNSET

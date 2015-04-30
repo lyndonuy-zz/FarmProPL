@@ -1,0 +1,46 @@
+##SEASON 1 w/o ENDSEASON
+##fertilizestring for int variable
+SUNRISE
+FARMIN swloop
+	##Variable Declaration
+	PLANTINT $choice;
+	HARVEST "[1] - Fruits";
+	HARVEST "[2] - Vegetable";
+	HARVEST "Enter the number of your choice: ";
+	FERTILIZSTRING $choice;
+	
+	CHANGE($choice){ 	
+		SEASON 1:
+		            HARVEST  "Enter [a] for apple";
+	 	            HARVEST  "Enter [o] for orange";
+		
+		           PLANTSTRING $ans;
+		           HARVEST "Enter the letter of your choice";
+		           FERTILIZESTRING $ans;
+		
+		         IF($ans ISEQUAL "a"){
+		          HARVEST "You chose apple. Thank you!";
+	                           }
+		        ELSE
+		        {
+		        HARVEST "You chose orange. Thank you!";
+		        }
+
+		SEASON 2:
+		         HARVEST "Enter [c] for carrot";
+	                           HARVEST "Enter [s] for squash";
+		
+		         PLANTSTRING $v;
+		         HARVEST "Enter the letter of your choice: ";
+		         FERTILIZESTRING $v;
+		
+		        IF($v ISEQUAL "c" OR $v ISEQUAL "C")
+		         { HARVEST "You chose carrots. Thank you!"; }
+	                          ELSE
+	                           { HARVEST "You chose squash. Thank you!"; }
+				       
+		ENDSEASON;
+		DEFAULT:
+		    HARVEST "Invalid input";	
+FARMOUT
+SUNSET		        

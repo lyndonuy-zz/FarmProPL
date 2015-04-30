@@ -1,0 +1,22 @@
+SUNRISE
+FARMIN fibonacci
+
+	PLANTINT $x IS 1;
+        PLANTINT $Z;
+	PLANTINT $y IS 0;
+	PLANTINT $ctr IS 0;
+	PLANTINT $sum;
+	PLANTINT $max;
+	PLANTBOOL $b1 IS YES;
+	PLANTBOOL $b2 IS NO;
+	HARVEST "Output fibonacci series up to: ";
+	FERTILIZEINT $max;
+	PLOW{
+		$sum IS $x + $y;
+		$y IS $x;
+                $x IS 2 + 3 / 2 * 4 - 5;
+		$x IS $sum;
+		GROW $ctr;
+	}WHILE($b2 OR $b1);
+FARMOUT
+SUNSET

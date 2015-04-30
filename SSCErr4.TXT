@@ -1,0 +1,28 @@
+##PLANTSTRING for a plantint identifier
+SUNRISE
+FARMIN PMDAS
+
+	PLANTINT $a;
+	PLANTINT $b;
+	PLANTSTRING $c;
+	PLANTINT $d;
+	PLANTINT $e;
+	PLANTINT $ans IS $a * ($b + $c) - $d / $e;
+
+	HARVEST "a * ( b + c ) - d / e";
+	HARVEST "Enter a value for a: ";
+	FERTILIZEINT $a;
+	HARVEST "Enter a value for b: ";
+	FERTILIZEINT $b;
+	HARVEST "Enter a value for c: ";
+	FERTILIZEINT $c;
+	HARVEST "Enter a value for d: ";
+	FERTILIZEINT $d;
+	HARVEST "Enter a value for e: ";
+	FERTILIZEINT $e;
+
+	HARVEST "The answer is ";
+	HARVEST $ans;
+
+FARMOUT
+SUNSET

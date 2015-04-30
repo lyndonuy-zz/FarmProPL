@@ -1,0 +1,8 @@
+SUNRISE
+FARMIN maliit
+	HARVEST "HELLO WORLD";
+	PLANTINT $smallvar IS 2+2+3;
+	HARVEST $smallervar;
+	HARVEST $smallvar;
+FARMOUT
+SUNSET

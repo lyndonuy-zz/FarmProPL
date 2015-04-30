@@ -1,0 +1,20 @@
+SUNRISE 
+FARMIN nstdwhile
+	PLANTINT $a IS 1;
+	PLANTINT $b IS 1;
+	HARVEST "Tables";
+	WHILE($a <= 2)
+	{
+	   WHILE($b<=2){
+	         HARVEST $a;
+	         HARVEST "*";
+	         HARVEST $b;
+	         HARVEST "=";
+	         HARVEST $a * $b;
+	         GROW $b; }
+       GROW $a;
+       HARVEST "@n";
+	}
+FARMOUT
+SUNSET
+                        

@@ -1,0 +1,6 @@
+SUNRISE
+FARMIN maliit
+	PLANTDEC $smallvar IS 2.0+-2.5+3;
+	PLANTDEC $smallervar IS $smallvar;
+FARMOUT
+SUNSET

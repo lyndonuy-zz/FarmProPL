@@ -1,0 +1,30 @@
+##string value for do-while condition
+##wrong data type declarations
+SUNRISE
+FARMIN oddeven
+    ## Variable Declarations
+    PLANTINT $str IS "Input a number: ";
+    PLANTSTRING $num IS 0;
+    PLANTDEC $quotient IS 0.0;
+
+    HARVEST $str;			## Displays the string
+    FERTILIZEINT $num;		## Input an integer into "num"
+
+    #: 
+        do-while loop structure
+        repeatedly divide the variable "quotient" until its value either became 1 or 0
+    :#
+    PLOW 
+        $quotient IS $num / 2;
+    WHILE($quotient > "TRUE");
+
+    HARVEST $num;	## Displays the value of "num"
+    ## Condition Statements
+    IF($quotient ISEQUAL 1) THEN
+        HARVEST " is odd.";
+    ELSE
+        HARVEST " is even.";
+    ENDIF	## Ends the condition structure
+FARMOUT
+
+SUNSET

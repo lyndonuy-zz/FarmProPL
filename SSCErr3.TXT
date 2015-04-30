@@ -1,0 +1,63 @@
+## no defaulter
+SUNRISE
+FARMIN farmers
+	
+	PLANTINT $choice;
+	PLANTINT $age;
+	PLANTSTRING $fn;
+	PLANTSTRING $sex;
+	PLANTSTRING $sun;
+	PLANTBOOL $sex2 IS NO;
+	PLANTBOOL $sun2 IS NO;
+	
+	HARVEST "4CSB farmers";
+	PLOW{
+		HARVEST "@n1 - Register Farmer@n2 - Exit";
+		FERTILIZEINT $choice;
+		CHANGE($choice){
+		SEASON 1:
+					HARVEST "FarmerName: ";
+					FERTILIZESTRING $fn;
+
+					PLOW{
+						HARVEST "Age: ";
+						FERTILIZEINT $age;
+					}WHILE($age<=17 OR $age>=61);
+
+					PLOW{
+						HARVEST "Sex[F/M]: ";
+						FERTILIZESTRING $sex;
+						IF ($sex ISEQUAL "F" OR $sex ISEQUAL "M") THEN
+							$sex2 IS YES;
+						ELSE
+							$sex2 IS NO;
+						ENDIF
+					}WHILE($sex2 ISEQUAL NO);
+
+					PLOW{
+						HARVEST "SUNRISE or SUNSET: ";
+						FERTILIZESTRING $sun;
+						IF ($sun ISEQUAL "SUNRISE") THEN
+							$sun2 IS YES;
+							$sun IS "Good morning";
+						ELSEIF ($sun ISEQUAL "SUNSET") THEN
+							$sun2 IS YES;
+							$sun IS "Good afternoon";
+						ELSE
+							$sun2 IS NO;
+						ENDIF
+					}WHILE($sun2 ISEQUAL NO);
+
+					HARVEST $sun;
+					HARVEST $fn;
+					HARVEST $age;
+					HARVEST $sex;
+					ENDSEASON;
+
+		SEASON 2:
+					ENDSEASON;
+		}
+	}WHILE($choice ISNOTEQUAL 2);
+
+FARMOUT
+SUNSET

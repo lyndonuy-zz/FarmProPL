@@ -1,0 +1,81 @@
+:: Solve power problem: base^exponent = powerAnswer
+
+SUNRISE
+
+FARMIN
+
+:: Variable Declarations
+
+PLANTDEC $base IS 0;
+
+PLANTDEC $orig IS 0;
+
+PLANTINT $exp IS 0;
+
+HARVEST "Input base: "; :: Displays the string
+
+FERTILIZEDEC$base; :: Input an decimal into "base"
+
+HARVEST "Input exponent: "; :: Displays the string
+
+FERTILIZEDEC $exp; :: Input an integer into "exp"
+
+$orig IS $base;
+
+PLOW {
+
+$base IS $base * $orig;
+
+TRIM $exp;
+
+} WHILE( $exp > 1 );
+
+HARVEST $base; :: Displays the value of "base"
+
+FARMOUT
+
+SUNSET
+
+¥
+
+:: Average problem: (x1, x2, x3, ... , xn) = x1 + x2 + x3 + ... + xn = sum / n
+
+SUNRISE
+
+FARMIN
+
+PLANTINT $n;
+
+PLANTINT $x;
+
+PLANTINT $ctr IS 1;
+
+PLANTINT $sum IS 0;
+
+PLANTINT $ave;
+
+HARVEST "Enter a value for n: ";
+
+FERTILIZEINT $n;
+
+PLOW{
+
+HARVEST "Enter a value for x".$ctr.": ";
+
+FERTILIZE $x;
+
+GROW $ctr;
+
+$sum = $sum+$x;
+
+}WHILE($ctr<=$n);
+
+$ave = $sum/$n;
+
+HARVEST "The average is ".$ave;
+
+FARMOUT
+
+SUNSET
+
+¥

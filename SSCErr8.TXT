@@ -1,0 +1,34 @@
+##incorrect if format and starter
+
+FARMIN largest
+SUNRISE
+
+	PLANTINT $x;
+	PLANTINT $y;
+	PLANTINT $z;
+
+	HARVEST "Enter a value for x: ";
+	FERTILIZEINT $x;
+	HARVEST "Enter a value for y: ";
+	FERTILIZEINT $y;
+	HARVEST "Enter a value for z: ";
+	FERTILIZEINT $z;
+
+	IF ($x>$y AND $x>$z) THEN
+		HARVEST "x = ";
+                HARVEST $x;
+                HARVEST " is the largest number";
+	ENDIF ($y>$x AND $y>$z) THEN
+		HARVEST "y = ";
+                HARVEST $y;
+                HARVEST " is the largest number";
+	ELSEIF ($z>$x AND $z>$y) THEN
+		HARVEST "z = ";
+                HARVEST $z;
+                HARVEST " is the largest number";
+	ELSE
+		HARVEST "The entered numbers are not distinct!";
+	ENDIF	
+
+FARMOUT
+SUNSET
